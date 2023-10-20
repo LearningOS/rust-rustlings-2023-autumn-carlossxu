@@ -1,0 +1,1 @@
+Map<Filter<std::slice::Iter<'_, std::collections::HashMap<String, Progress>>, [closure@exercises/iterators/iterators5.rs:58:30: 58:38]>, [closure@exercises/iterators/iterators5.rs:58:56: 58:59]>

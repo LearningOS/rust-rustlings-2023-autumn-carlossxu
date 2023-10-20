@@ -3,7 +3,24 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
+
+struct Counter {
+    count: u64,
+}
+
+impl Iterator for Counter {
+    type Item = u64;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.count > 0 {
+            self.count -= 1;
+            Some(self.count+1)
+        } else {
+            None
+        }
+    }
+}
 
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
@@ -15,6 +32,14 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+
+    // let mut res = 1;
+    // let mut c = Counter {count: num};
+    // while let Some(x) = c.next() {
+    //     res *= x;
+    // }
+    // res
+    (1..=num).fold(1, |acc, x| acc*x)
 }
 
 #[cfg(test)]
